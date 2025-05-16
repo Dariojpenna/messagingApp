@@ -1,4 +1,4 @@
-from models import Chat,Message,MessageStatus,User,Reaction,Attachment
+from .models import Chat,Message,MessageStatus,User,Reaction,Attachment
 from rest_framework import serializers
 
 class UserSerializer(serializers.ModelSerializer):

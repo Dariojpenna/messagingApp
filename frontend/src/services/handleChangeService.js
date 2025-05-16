@@ -1,7 +1,7 @@
-export const handleChange = (e, seetState)=> {
+export const handleChange = (e, setState)=> {
     const {name, value} = e.target
 
-    seetState((prevState) =>({
+    setState((prevState) =>({
         ...prevState,
         [name]: value
     }))

@@ -128,7 +128,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS= True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -140,3 +139,40 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173"
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+CORS_ALLOW_HEADERS = [
+    "authorization",
+    "content-type",
+    "x-csrftoken",
+    "X-CSRFToken"
+    # otros headers si tienes
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173"
+]
+
+CSRF_COOKIE_NAME = 'csrftoken'  # Nombre de la cookie CSRF
+CSRF_COOKIE_HTTPONLY = False    # Para permitir acceso desde JS
+CORS_ALLOW_CREDENTIALS = True
+
+
+CSRF_COOKIE_SECURE = False  # True en producción con HTTPS
+CSRF_COOKIE_SAMESITE = 'Lax'  # o 'None' si usas Secure
+SESSION_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SECURE = False
+CORS_ALLOW_CREDENTIALS = True
+
+
